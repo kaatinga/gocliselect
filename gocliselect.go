@@ -93,7 +93,7 @@ func (m *Menu[V]) Display() (output V) {
 		fmt.Printf("\033[?25h")
 	}()
 
-	fmt.Printf("%s\n", goterm.Color(goterm.Bold(m.Prompt)+":", goterm.CYAN))
+	fmt.Printf("%s\n", goterm.Color(goterm.Bold(m.Prompt)+":", m.SelectedItemColour))
 
 	m.renderMenuItems(false)
 
