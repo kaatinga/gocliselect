@@ -35,10 +35,11 @@ type MenuItem[V ID] struct {
 	SubMenu *Menu[V]
 }
 
-func NewMenu[V ID](prompt string) *Menu[V] {
+func NewMenu[V ID](prompt string, selectedItemColour int) *Menu[V] {
 	return &Menu[V]{
-		Prompt:    prompt,
-		MenuItems: make([]*MenuItem[V], 0),
+		Prompt:             prompt,
+		MenuItems:          make([]*MenuItem[V], 0),
+		SelectedItemColour: selectedItemColour,
 	}
 }
 
